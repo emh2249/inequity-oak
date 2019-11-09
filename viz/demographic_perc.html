@@ -1,0 +1,31 @@
+<!doctype html>
+<meta charset="utf-8">
+
+<script src="../d3plus.v2.js"></script>
+
+<body>
+
+</body>
+<script>
+
+var data = [
+  {id: "White", value: 29},
+  {id: "Black",  value: 10},
+  {id: "Asian", value: 2},
+  {id: "American Indian", value: 29},
+  {id: "Hispanic",   value: 25}
+];
+
+new d3plus.Treemap()
+  .data(data)
+  .groupBy("id")
+  .shapeConfig({
+    labelConfig: {
+      fontFamily: "serif",
+      fontMax: 100
+    }
+  })
+  .sum("value")
+  .render();
+
+  </script>
