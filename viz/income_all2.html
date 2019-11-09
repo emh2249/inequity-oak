@@ -1,0 +1,39 @@
+<!doctype html>
+<meta charset="utf-8">
+
+<script src="../d3plus.v2.js"></script>
+
+
+
+<body>
+</body>
+
+<script>
+
+var myData = [
+  {
+    "Name": "Piedmont,",
+    "Household_Income": 150214
+  },
+  {
+    "Name": "Oakland",
+    "Household_Income": 28217
+  },
+];
+
+new d3plus.BarChart()
+  .config({
+    data: myData,
+    groupBy: "Name",
+    x: "Name",
+    y: "Household_Income",
+    xSort: function(a, b) {
+      return a["Name"] - b["Name"];
+    },
+    legend: false
+  })
+  .title("Median Household Income Comparison")
+  .render();
+
+
+  </script>

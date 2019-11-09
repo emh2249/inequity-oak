@@ -1,0 +1,35 @@
+<!doctype html>
+<meta charset="utf-8">
+
+<script src="../d3plus.v2.js"></script>
+<script src="//d3plus.org/js/d3.js"></script>
+<script src="//d3plus.org/js/d3plus.js"></script>
+
+<div id="viz"></div>
+
+<script>
+  var data = [
+    {"value": 125013, "name": "White"},
+    {"value": 142460, "name": "Black"},
+    {"value": 60851, "name": "Asian"},
+    {"value": 2655, "name": "American Indian"},
+    {"value": 87467, "name": "Hispanic"},
+  ];
+
+  var visualization = d3plus.viz()
+    .container("#viz")
+    .data(data)
+    .type("tree_map")
+    .id("name")
+    .size("value")
+    .title("Oakland Demographics by Race")
+    .title({
+      "sub": "Total Percentage does not reflect total population, other minority races are not shown.",
+      "total": true
+    })
+    .footer({
+      "link": "http://www.bayareacensus.ca.gov/cities/Oakland.htm",
+      "value": "Click here for the Bay Area Census, City of Oakland"
+    })
+    .draw()
+</script>
